@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html   xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <th th:fragment="column_link(fieldName,columnLable)">
+    <a class="text-dark" th:href="@{  '/users/page/'+${pageNum}+'?sortField='+${fieldName}+'&sortDir='+${sortField != fieldName?sortDir:revSortDir} }">[[${columnLable}]]</a>
+    <span th:if="${sortField== fieldName }" th:class="${sortDir =='asc' ? 'fas fa-sort-up' : 'fas fa-sort-down'}"></span>
+  </th>
+</body>
+</html>
